@@ -70,7 +70,7 @@ export default function RegisterForm() {
         <div className="flex flex-col gap-4">
           <div>
             <input
-              className="text-[color:black] px-3 py-1.5 border rounded-md focus:outline-none focus:ring-2"
+              className="w-full text-[color:black] px-3 py-1.5 border rounded-md focus:outline-none focus:ring-2"
               placeholder={"Username"}
               value={input.username}
               name="username"
@@ -80,7 +80,7 @@ export default function RegisterForm() {
           </div>
           <div>
             <input
-              className="text-[color:black] px-3 py-1.5 border rounded-md focus:outline-none focus:ring-2"
+              className="w-full text-[color:black] px-3 py-1.5 border rounded-md focus:outline-none focus:ring-2"
               placeholder={"Password"}
               value={input.password}
               name="password"
@@ -91,7 +91,7 @@ export default function RegisterForm() {
           </div>
           <div>
             <input
-              className="text-[color:black] px-3 py-1.5 border rounded-md focus:outline-none focus:ring-2"
+              className="w-full text-[color:black] px-3 py-1.5 border rounded-md focus:outline-none focus:ring-2"
               placeholder={"Confirm Password"}
               value={input.confirmPassword}
               name="confirmPassword"
@@ -102,7 +102,7 @@ export default function RegisterForm() {
           </div>
           <div>
             <input
-              className="text-[color:black] px-3 py-1.5 border rounded-md focus:outline-none focus:ring-2"
+              className="w-full text-[color:black] px-3 py-1.5 border rounded-md focus:outline-none focus:ring-2"
               placeholder={"Email Address"}
               value={input.email}
               name="email"
@@ -112,7 +112,7 @@ export default function RegisterForm() {
           </div>
           <div>
             <input
-              className="text-[color:black] px-3 py-1.5 border rounded-md focus:outline-none focus:ring-2"
+              className="w-full text-[color:black] px-3 py-1.5 border rounded-md focus:outline-none focus:ring-2"
               placeholder={"Phone Number, Optional"}
               value={input.phone}
               name="phone"
@@ -120,9 +120,19 @@ export default function RegisterForm() {
               error={inputError.phone}
             />
           </div>
-          <div className="bg-buttonalt col-span-2 text-center rounded-md">
+          <div className="bg-buttonalt col-span-2 text-center py-1.5 px-3 rounded-md">
             <button type="submit">Sign Up</button>
           </div>
+          <hr className="my-6 border-[white]" />
+
+          <h1>Already have an account? Login here!</h1>
+          <button
+            className="bg-button px-3 py-1.5 rounded-md"
+            type="submit"
+            onClick={(e) => (window.location.href = "/login")}
+          >
+            Login
+          </button>
         </div>
       </form>
     </>
