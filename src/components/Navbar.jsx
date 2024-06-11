@@ -4,6 +4,7 @@ import logo from "../assets/logo.png";
 import userIcon from "../assets/user_icon.png";
 import tournament from "../assets/tournament.png";
 import notification from "../assets/notification.png";
+import Dropdown from "../layouts/Dropdown";
 
 function Navbar() {
   return (
@@ -19,7 +20,7 @@ function Navbar() {
             style={{ width: "45px", height: "45px" }}
           />
         </div>
-        <NavLink to="/user/:id/attended">
+        <NavLink to="/user/:id/host">
           <div>
             <img
               src={tournament}
@@ -28,15 +29,7 @@ function Navbar() {
             />
           </div>
         </NavLink>
-        <NavLink to="/profile/:userId">
-          <div>
-            <img
-              src={userIcon}
-              alt="user"
-              style={{ width: "45px", height: "45px" }}
-            />
-          </div>
-        </NavLink>
+        <Dropdown />
       </div>
     </nav>
   );

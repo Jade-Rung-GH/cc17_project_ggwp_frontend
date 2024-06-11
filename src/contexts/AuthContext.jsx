@@ -1,6 +1,10 @@
 import { useState } from "react";
 import authApi from "../apis/auth";
-import { getAccessToken, setAccessToken } from "../utils/local-storage";
+import {
+  getAccessToken,
+  setAccessToken,
+  removeAccessToken,
+} from "../utils/local-storage";
 import { createContext } from "react";
 import { useEffect } from "react";
 
@@ -34,8 +38,15 @@ export default function AuthContextProvider({ children }) {
     setAuthUser(resGetAuthUser.data.user);
   };
 
+  const logout = () => {
+    removeAccessToken();
+    setAuthUser(null);
+  };
+
   return (
-    <AuthContext.Provider value={{ login, authUser, isAuthUserLoading }}>
+    <AuthContext.Provider
+      value={{ login, logout, authUser, isAuthUserLoading }}
+    >
       {children}
     </AuthContext.Provider>
   );
