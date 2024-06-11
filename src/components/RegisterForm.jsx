@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import validateRegister from "../validators/validate-register";
 import authApi from "../apis/auth";
 import { AxiosError } from "axios";
+import { useNavigate } from "react-router-dom";
 
 const initialInput = {
   username: "",
@@ -24,6 +26,8 @@ export default function RegisterForm() {
   const [input, setInput] = useState(initialInput);
   const [inputError, setInputError] = useState(initialInputError);
 
+  const navigate = useNavigate();
+
   const handleChangeInput = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
@@ -44,8 +48,8 @@ export default function RegisterForm() {
       setInputError({ ...initialInput });
 
       await authApi.register(response);
-      // onSuccess();
-      toast.success("Registered Successfully, Please Login to Continue");
+      navigate("/login");
+      toast.success("Registered Successfully, Redirecting to Login");
     } catch (err) {
       console.log(err);
       if (err instanceof AxiosError) {

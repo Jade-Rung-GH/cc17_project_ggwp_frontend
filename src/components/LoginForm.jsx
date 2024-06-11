@@ -68,7 +68,11 @@ export default function LoginForm() {
           <hr className="my-6 border-[white]" />
 
           <h1>Don't have an account yet? Register Here!</h1>
-          <button className="bg-buttonalt px-3 py-1.5 rounded-md" type="submit">
+          <button
+            className="bg-buttonalt px-3 py-1.5 rounded-md"
+            type="submit"
+            onClick={(e) => (window.location.href = "/register")}
+          >
             Register
           </button>
         </div>
