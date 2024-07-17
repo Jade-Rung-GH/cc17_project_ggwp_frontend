@@ -22,8 +22,8 @@ function HomeBody() {
     fetchTournaments();
   }, []);
   return (
-    <div className="w-screen h-screen bg-darkbg2 flex justify-between">
-      <div className="w-72"></div>
+    <div className="w-screen h-screen bg-darkbg2 flex justify-center">
+      {/* <div className="w-72"></div> */}
       <div className="grid grid-cols-4 gap-4 gap-y-4 mt-4 overflow-y-auto">
         {tournament?.map((item) => (
           <TournamentCards
@@ -33,7 +33,7 @@ function HomeBody() {
           />
         ))}
       </div>
-      <RightBar />
+      {/* <RightBar /> */}
     </div>
   );
 }
